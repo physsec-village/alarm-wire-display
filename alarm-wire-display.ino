@@ -4,36 +4,36 @@
 
 
 namespace NO{
-  constexpr int closed_upper = 0;
-  constexpr int closed_lower = 0;
-  constexpr int open_upper = 0;
-  constexpr int open_lower = 0;
-  constexpr int oc_upper = 0;
-  constexpr int oc_lower = 0;
+  constexpr int closed_upper = 1.6/5.0 * 1023;
+  constexpr int closed_lower = 0.8/5.0 * 1023;
+  constexpr int open_upper = 0.5/5.0 * 1023;
+  constexpr int open_lower = 0/5.0 * 1023;
+  constexpr int oc_upper = 2.4/5.0 * 1023;
+  constexpr int oc_lower = 1.6/5.0 * 1023;
   constexpr int sc_upper = -1;
   constexpr int sc_lower = -1;
 }
 
 namespace NC{
-  constexpr int closed_upper = 0;
-  constexpr int closed_lower = 0;
-  constexpr int open_upper = 0;
-  constexpr int open_lower = 0;
+  constexpr int closed_upper = 3.5/5.0 * 1023;
+  constexpr int closed_lower = 2.5/5.0 * 1023;
+  constexpr int open_upper = 2.5/5.0 * 1023;
+  constexpr int open_lower = 1.5/5.0 * 1023;
   constexpr int oc_upper = -1;
   constexpr int oc_lower = -1;
-  constexpr int sc_upper = 0;
-  constexpr int sc_lower = 0;
+  constexpr int sc_upper = 0.5/5.0 * 1023;
+  constexpr int sc_lower = 0/5.0 * 1023;
 }
 
 namespace Dual{
-  constexpr int closed_upper = 0;
-  constexpr int closed_lower = 0;
-  constexpr int open_upper = 0;
-  constexpr int open_lower = 0;
-  constexpr int oc_upper = 0;
-  constexpr int oc_lower = 0;
-  constexpr int sc_upper = 0;
-  constexpr int sc_lower = 0;
+  constexpr int closed_upper = 1.4/5.0 * 1023;
+  constexpr int closed_lower = 1/5.0 * 1023;
+  constexpr int open_upper = 1/5.0 * 1023;
+  constexpr int open_lower = 0.6/5.0 * 1023;
+  constexpr int oc_upper = 2.2/5.0 * 1023;
+  constexpr int oc_lower = 1.8/5.0 * 1023;
+  constexpr int sc_upper = 0.5/5.0 * 1023;
+  constexpr int sc_lower = 0/5.0 * 1023;
 }
 
 #define CLOSED_LED 2
