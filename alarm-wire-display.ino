@@ -36,11 +36,11 @@ namespace Dual{
   constexpr int sc_lower = 0;
 }
 
-#define CLOSED_LED 0
-#define OPEN_LED 0
+#define CLOSED_LED 2
+#define OPEN_LED 4
 #define OC_LED 0
-#define SC_LED 0
-#define INCORRECT_R_LED 0
+#define SC_LED 1
+#define INCORRECT_R_LED 5
 
 #define ADC_IN 0
 
