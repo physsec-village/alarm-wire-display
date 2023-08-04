@@ -1,7 +1,22 @@
 // !!!!! Remember to update me before flashing !!!!!
+// Display type
 // NO = normally open, NC = normally closed, Dual = dual EOL resistor
 #define MODE NC
 
+
+// I/O pin assignments
+
+#define CLOSED_LED 2
+#define OPEN_LED 4
+#define OC_LED 0
+#define SC_LED 1
+#define INCORRECT_R_LED 5
+
+#define ADC_IN 3
+
+// Voltage threshold values for each display type
+// The ATtiny has a 10-bit ADC over 5V-0V so the numbers are scaled by:
+// (voltage)/5V * (2^10-1)
 
 namespace NO{
   constexpr int closed_upper = 1.6/5.0 * 1023;
@@ -36,27 +51,21 @@ namespace Dual{
   constexpr int sc_lower = 0/5.0 * 1023;
 }
 
-#define CLOSED_LED 2
-#define OPEN_LED 4
-#define OC_LED 0
-#define SC_LED 1
-#define INCORRECT_R_LED 5
-
-#define ADC_IN 3
-
 void setup() {
-  // put your setup code here, to run once:
+  // Display LEDs
   pinMode(CLOSED_LED, OUTPUT);
   pinMode(OPEN_LED, OUTPUT);
   pinMode(OC_LED, OUTPUT);
   pinMode(SC_LED, OUTPUT);
   pinMode(INCORRECT_R_LED, OUTPUT);
 
+  // Voltage sense
   pinMode(ADC_IN, INPUT);
-
 }
 
 void loop() {
+  // Read the voltage and set the state accordingly
+
   int voltage = analogRead(ADC_IN);
 
   int state = 0; // closed, open, oc, sc, incorrect r
@@ -72,6 +81,8 @@ void loop() {
   } else {
     state = 5; // incorrect r
   }
+
+  // Turn on the LED for the state we're in and turn off all others
 
   digitalWrite(CLOSED_LED, state == 1 ? HIGH : LOW);
   digitalWrite(OPEN_LED, state == 2 ? HIGH : LOW);
