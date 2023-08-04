@@ -42,7 +42,7 @@ namespace Dual{
 #define SC_LED 1
 #define INCORRECT_R_LED 5
 
-#define ADC_IN 0
+#define ADC_IN 3
 
 void setup() {
   // put your setup code here, to run once:
