@@ -87,6 +87,6 @@ void loop() {
   digitalWrite(CLOSED_LED, state == 1 ? HIGH : LOW);
   digitalWrite(OPEN_LED, state == 2 ? HIGH : LOW);
   digitalWrite(OC_LED, state == 3 ? HIGH : LOW);
-  digitalWrite(SC, state == 4 ? HIGH : LOW);
+  digitalWrite(SC_LED, state == 4 ? HIGH : LOW);
   digitalWrite(INCORRECT_R_LED, state == 5 ? HIGH : LOW);
 }
